@@ -1,0 +1,10 @@
+ext.ver = [
+        room: "2.4.3",
+        dagger2: "2.42",
+        cicerone: "7.1",
+        coroutines: "1.6.4",
+        viewBindingDelegate: "1.5.6",
+        retrofit: "2.9.0",
+        loging: "5.0.0-alpha.2",
+        moshi: "1.14.0"
+]

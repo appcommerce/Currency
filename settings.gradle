@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Currencvisor"
+include ':app'
+include ':popular_feature'
+include ':navigation'
+include ':favorite_feature'
+include ':network'
+include ':core_ui'
+include ':db_model'

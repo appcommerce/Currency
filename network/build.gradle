@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+apply from: '../versions.gradle'
+
+android {
+    namespace 'ru.appcommerce.network'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 33
+        buildConfigField "String", "SERVER_URL", '"https://api.apilayer.com/"'
+        buildConfigField "String", "API_KEY", '"s7mNiLU6NBo5Yk9nHHWXbaqewLrUDNxR"'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    api project(path: ':db_model')
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${ver.coroutines}"
+    implementation "com.squareup.retrofit2:retrofit:${ver.retrofit}"
+    implementation "com.squareup.retrofit2:converter-moshi:${ver.retrofit}"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:${ver.moshi}"
+    implementation "androidx.room:room-ktx:${ver.room}"
+    implementation "androidx.room:room-runtime:${ver.room}"
+    kapt "androidx.room:room-compiler:${ver.room}"
+    implementation "com.google.dagger:dagger:${ver.dagger2}"
+    kapt "com.google.dagger:dagger-compiler:${ver.dagger2}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${ver.loging}"
+
+}

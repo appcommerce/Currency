@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Обозреватель валют</string>
+    <string name="down_menu_popular_title">Популярные</string>
+    <string name="down_menu_favorite_title">Избранные</string>
+</resources>
