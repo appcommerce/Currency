@@ -1,6 +1,6 @@
 ext.ver = [
         room: "2.4.3",
-        dagger2: "2.42",
+        dagger2: "2.44.2",
         cicerone: "7.1",
         coroutines: "1.6.4",
         viewBindingDelegate: "1.5.6",
